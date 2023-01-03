@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1a1c24;
+}
+.marketplace {
+  background-color: #1f2029;
+  color: #9293a6;
+}
+.limited-marketplace {
+  background-color: #2b2c37;
+  border-radius: 3px;
+}
+.border_end {
+  border-right: 2px solid #3e404f;
+  padding-right: 35px;
+}
+.recently-sold {
+  margin-bottom: 70px;
+}
+.recently-sold_box {
+  background-color: #2b2c37;
+}
+.recently-sold h5,
+.products_boxes h5 {
+  font-size: 16px;
+}
+.recently-sold_boxes,
+.products_boxes,
+.products_boxes_deposit,
+.cart-boxes {
+  background-color: #383a49;
+}
+.product_btn .btn {
+  height: 48px;
+  background-color: #3e404f;
+  box-shadow: 0px 3px 0px 0px #1c1d25;
+  color: white;
+  font-size: 12px;
+}
+.product_btn_gold .btn {
+  height: 48px;
+  background-color: #e9b10e;
+  box-shadow: 0px 3px 0px 0px #cc6c31;
+  color: #000;
+  font-size: 12px;
+}
+.product_btn .btn:hover {
+  background-color: #e9b10e;
+  box-shadow: 0px 3px 0px 0px #cc6c31;
+  color: #000;
+}
+.products_boxes:hover {
+  border: 1px solid #e9b10e;
+  color: #fff;
+  background-color: #e9b10e38;
+}
+.products_boxes_deposit h6,
+.products_boxes_deposit p {
+  font-size: 12px;
+}
+.exit {
+  right: 5%;
+  top: 10%;
+  background: #3e404f;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: none;
+}
+.modal-body {
+  padding: 3px 70px;
+}
+.modal-body h5 {
+  font-size: 18px;
+}
+.modal-footer button {
+  height: 52px;
+  width: 167px;
+}
