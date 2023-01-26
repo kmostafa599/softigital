@@ -1,5 +1,6 @@
 body {
   background-color: #1a1c24;
+
 }
 .container {
   max-width: 1200px;
@@ -194,6 +195,24 @@ input[type="number"] {
   border-radius: 6px;
   font-weight: bold;
 }
+
+.chart-controler{
+  width:100%;
+  padding-left: 0;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.chat-header{
+  padding: 0 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.chat-header-container{
+  padding:0 0.6rem;
+}
+.count-number{
+  font-family: 'DIN-Medium';
+}
 .over-layx {
   position: absolute;
   top: 0;
@@ -340,8 +359,8 @@ a {
 }
 .logo-img {
   object-fit: contain;
-  width: 175px;
-  height: 50px;
+  width: 140px;
+  height: 49px;
 }
 .balance-bar {
   position: relative;
@@ -378,38 +397,62 @@ a {
     display: none;
   }
 }
+
 /* page-conent  */
 .page-conent {
   overflow-x: hidden;
 }
-/* chat */
 
+/* chat */
 .chat-container {
-  background-color: #202029;
   height: 85vh;
-  /* width: 100%; */
+  width: 100%;
   position: relative;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden; 
+  font-family:"DIN";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+.chat-wrapper{
+  background-color: #202029;
+
+}
+.chat-container-2{
+  width:"18rem"
+}
+
 .chat-list {
   height: 100%;
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 0px 20px;
+  overflow: auto;
 }
+.chat-list-container{
+  height: 100%;
+  width: 100%;
+}
+.chat-name{
+  display: inline;
+  padding-right: 0.5rem;
+  font-family: 'Finlandica', sans-serif;
+}
+
 .chat-msg {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
+  display: inline;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  max-width:150px;
+  font-family: 'Finlandica', sans-serif;
 }
+.msg-container{
+  padding-right: 2rem;
+}
+
 .chat-bottom {
   position: sticky;
   bottom: 0;
   z-index: 9;
   width: 100%;
+  text-transform: capitalize;
 }
 .call-btn .fa-check {
   color: #02bf4d;
@@ -464,6 +507,7 @@ a {
   background-color: #202029;
   height: 38px;
   border-radius: 4px;
+  font-weight:bold;
 }
 
 .control_box {
@@ -512,8 +556,8 @@ a {
     display: block !important;
   }
   .logo-img {
-    width: 140px;
-    height: 35px;
+    width: 196px;
+    height: 49px;
   }
   .nav-logo {
     justify-content: center;
@@ -529,8 +573,8 @@ a {
     gap: 10px !important;
   }
   .logo-img {
-    width: 120px;
-    height: 35px;
+    width: 168px;
+    height: 49px;
   }
 
   .show-controller-buttons {
@@ -635,8 +679,8 @@ a {
     gap: 10px !important;
   }
   .logo-img {
-    width: 120px;
-    height: 35px;
+    width: 168px;
+    height: 49px;
   }
 
   .show-login-buttons {
@@ -680,26 +724,74 @@ a {
   }
 }
 
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+  border-radius: 10px;
+} */
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  /* -webkit-box-shadow: inset 0 0 2px rgba(128, 128, 128, 1);  */
+  background-color:rgba(128, 128, 128, 0.5);
+}
+
+
+/* #3 */
+
 @media (min-width: 768px) {
   .logo-img {
-    width: 120px;
-    height: 35px;
+    width: 168px;
+    height: 49px;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-device-width: 992px) {
+  .logo-img {
+    width: 140px;
+    height: 49px;
+  }
 }
 
-@media (min-width: 1200px) and (max-width: 1400px) {
+@media (min-width: 1200px) {
   .main-dark-btn {
     min-width: 120px;
     font-size: 13px;
   }
   .logo-img {
-    width: 100px;
-    height: 35px;
+    width: 140px;
+    height: 49px;
   }
 }
 
-@media (min-width: 1400px) {
+@media (max-device-width: 1400px) {
+  
+  .logo-img {
+    width: 140px;
+    height: 49px;
+  }
 }
+
+canvas {
+  border-left: 1px solid #333541;
+  border-bottom: 1px solid #333541;
+
+}
+
+/* Fonts */
+
+@font-face {font-family: "DIN-Medium";
+   src:url("//db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.woff") format("woff"),
+  }
+@font-face {font-family: "DIN";
+      src:url("//db.onlinewebfonts.com/t/e934b630586ca9b7fe66c99ac1592f4a.woff") format("woff"),
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:wght@400;600&display=swap');
+
+

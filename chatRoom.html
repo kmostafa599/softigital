@@ -1,587 +1,766 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      rel="stylesheet"
-    />
 
-    <link rel="stylesheet" href="marketplaceStyle.css" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Chat Room</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
 
-  <body>
-    <!-- start Nav -->
-    <nav class="dark-bg-1 pt-3 pb-3">
-      <div class="container-fluid">
-        <div
-          class="nav-content d-flex align-items-center justify-content-between gap-4"
-        >
-          <!-- logo  -->
-          <div class="nav-logo d-flex align-items-center flex-shrink-0 me-2">
-            <a href="index.html" class="logo-a">
-              <img src="logo.png" class="logo-img" alt="logo" />
-            </a>
-          </div>
 
-          <!-- buttons  -->
-          <div
-            class="d-flex align-items-center justify-content-between flex-grow-1"
-          >
-            <!-- start Buttons -->
-            <div class="btns-controller position-relative">
-              <button
-                class="show-controller-buttons main-dark-btn cu-btn dark-bg-1 light-tx-1 d-none mb-2"
-              >
-                <i class="fas fa-coins light-tx-1 siz-18"></i>
-                <!-- <i class="fas fa-arrow-alt-circle-down "></i> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Finlandica:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Finlandica:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="marketplaceStyle.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Chat Room</title>
+</head>
+
+<body>
+  <!-- start Nav -->
+  <nav class="dark-bg-1 pt-3 pb-3">
+    <div class="container-fluid">
+      <div class="nav-content d-flex align-items-center justify-content-between gap-4">
+        <!-- logo  -->
+        <div class="nav-logo d-flex align-items-center flex-shrink-0 me-2">
+          <a href="index.html" class="logo-a">
+            <img src="logo.png" class="logo-img" alt="logo" />
+          </a>
+        </div>
+
+        <!-- buttons  -->
+        <div class="d-flex align-items-center justify-content-between flex-grow-1">
+          <!-- start Buttons -->
+          <div class="btns-controller position-relative">
+            <button class="show-controller-buttons main-dark-btn cu-btn dark-bg-1 light-tx-1 d-none mb-2">
+              <i class="fas fa-coins light-tx-1 siz-18"></i>
+              <!-- <i class="fas fa-arrow-alt-circle-down "></i> -->
+            </button>
+
+            <div class="f-nav-btn d-flex gap-2">
+              <button class="main-dark-btn gold-tx-1">
+                <img src="crash_arrow.png" class="btn-icone" alt="" />
+                <span class="uppercase">Crash</span>
               </button>
-
-              <div class="f-nav-btn d-flex gap-2">
-                <button class="main-dark-btn gold-tx-1">
-                  <img src="crash_arrow.png" class="btn-icone" alt="" />
-                  <span class="uppercase">Crash</span>
-                </button>
-                <button class="main-dark-btn">
-                  <img src="dot_circle.png" class="btn-icone" alt="" />
-                  <span class="uppercase">roulette</span>
-                </button>
-                <button class="main-dark-btn">
-                  <img src="cash.png" class="btn-icone" alt="" />
-                  <span class="uppercase">coinflip</span>
-                </button>
-              </div>
-            </div>
-            <!-- balance -->
-            <div class="balance-bar">
-              <div class="main-dark-btn justify-content-start ps-3 pe-4 gap-3">
-                <img src="coin.png" class="btn-icone" alt="" />
-                <div>
-                  <div class="light-tx-2 siz-10">balance</div>
-                  <div class="light-tx-1 fw-bold">$ 2000.00</div>
-                </div>
-              </div>
-              <button>
-                <i class="fas fa-plus"></i>
+              <button class="main-dark-btn">
+                <img src="dot_circle.png" class="btn-icone" alt="" />
+                <span class="uppercase">roulette</span>
+              </button>
+              <button class="main-dark-btn">
+                <img src="cash.png" class="btn-icone" alt="" />
+                <span class="uppercase">coinflip</span>
               </button>
             </div>
-            <!-- end buttons -->
-            <div class="sec-part position-relative">
-              <button
-                class="show-login-buttons cu-btn dark-bg-1 light-tx-1 d-none"
-              >
-                <i class="fas fa-bars light-tx-1 siz-18 fw-bolder"></i>
-              </button>
-              <div class="menu-list d-flex gap-3 align-items-center">
-                <a href="#" class="light-tx-1">Redeem</a>
-                <a href="#" class="light-tx-1">Redeem</a>
-                <div class="lgoin-btns d-flex gap-2">
-                  <a href="#" class="purble-btn cu-btn fw-bold uppercase">
-                    <img src="discord.png" class="btn-icone" alt="" />
-                  </a>
-                  <a href="#" class="gold-btn cu-btn fw-bold uppercase">
-                    Deposit
-                  </a>
-                  <a href="#" class="green-btn cu-btn fw-bold uppercase">
-                    login
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Start Content -->
-    <div class="page-conent light-tx-1">
-      <div class="row">
-        <button class="open-chat-bar d-none green-btn fw-bold uppercase">
-          <i class="far fa-comment-dots"></i>
-        </button>
-
-        <div class="col-md-6 col-lg-3 chat-bar mb-3">
-          <button class="close-chat-bar d-none">
-            <i class="fas fa-times-circle"></i>
-          </button>
-
-          <div class="chat-container ps-2 pe-2 pb-2 pt-0 siz-14 w-100">
-            <div class="position-sticky bg-dark-1">
-              <!-- chat room -->
-              <div
-                class="d-flex align-items-center mt-2 justify-content-between dark-bg-1 p-2 rounded-1"
-              >
-                <div class="fw-bold">chat room</div>
-
-                <div class="d-flex align-items-center siz-10 gap-2">
-                  <div class="online-dot"></div>
-                  <span>4234</span>
-                </div>
-              </div>
-              <!-- total rain -->
-
-              <div
-                class="mt-2 chat-room d-flex align-items-center justify-content-between dark-bg-1 p-2 rounded-1"
-              >
-                <div class="fw-bold">total rain</div>
-
-                <div
-                  class="d-flex align-items-center justify-content-start gap-1"
-                >
-                  <img src="coin.png" class="btn-icone" alt="" />
-                  <div class="light-tx-1">2323</div>
-                </div>
+          <!-- balance -->
+          <div class="balance-bar">
+            <div class="main-dark-btn justify-content-start ps-3 pe-4 gap-3">
+              <img src="coin.png" class="btn-icone" alt="" />
+              <div>
+                <div class="light-tx-2 siz-10">balance</div>
+                <div class="light-tx-1 fw-bold">$ 2000.00</div>
               </div>
             </div>
-            <!-- chat -->
-            <div class="chat-list mt-3">
-              <div class="chat-item d-flex gap-1 mt-2">
-                <div class="caht-avater flex-shrink-0">
-                  <img src="person1.png" alt="" />
-                </div>
-                <div class="d-flex gap-1 align-items-baseline siz-11">
-                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
-                    yellowStone
-                  </div>
-                  <div class="chat-msg">
-                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
-                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
-                    adipisicing elit. , quae. Lorem
-                  </div>
-                </div>
-              </div>
-              <div class="chat-item d-flex gap-1 mt-2">
-                <div class="caht-avater flex-shrink-0">
-                  <img src="person2.png" alt="" />
-                </div>
-                <div class="d-flex gap-1 align-items-baseline siz-11">
-                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
-                    yellowStone
-                  </div>
-                  <div class="chat-msg">
-                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
-                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
-                    adipisicing elit. , quae. Lorem
-                  </div>
-                </div>
-              </div>
-              <div class="chat-item d-flex gap-1 mt-2">
-                <div class="caht-avater flex-shrink-0">
-                  <img src="person1.png" alt="" />
-                </div>
-                <div class="d-flex gap-1 align-items-baseline siz-11">
-                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
-                    yellowStone
-                  </div>
-                  <div class="chat-msg">
-                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
-                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
-                    adipisicing elit. , quae. Lorem
-                  </div>
-                </div>
-              </div>
-              <div class="chat-item d-flex gap-1 mt-2">
-                <div class="caht-avater flex-shrink-0">
-                  <img src="person2.png" alt="" />
-                </div>
-                <div class="d-flex gap-1 align-items-baseline siz-11">
-                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
-                    yellowStone
-                  </div>
-                  <div class="chat-msg">
-                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
-                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
-                    adipisicing elit. , quae. Lorem
-                  </div>
-                </div>
-              </div>
-
-              <div class="chat-item d-flex gap-1 mt-2">
-                <div class="caht-avater flex-shrink-0">
-                  <img src="person1.png" alt="" />
-                </div>
-                <div class="d-flex gap-1 align-items-baseline siz-11">
-                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
-                    yellowStone
-                  </div>
-                  <div class="chat-msg">
-                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
-                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
-                    adipisicing elit. , quae. Lorem
-                  </div>
-                </div>
-              </div>
-              <div class="chat-item d-flex gap-1 mt-2">
-                <div class="caht-avater flex-shrink-0">
-                  <img src="person1.png" alt="" />
-                </div>
-                <div class="d-flex gap-1 align-items-baseline siz-11">
-                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
-                    yellowStone
-                  </div>
-                  <div class="chat-msg">
-                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
-                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
-                    adipisicing elit. , quae. Lorem
-                  </div>
-                </div>
-              </div>
-              <div class="chat-item d-flex gap-1 mt-2">
-                <div class="caht-avater flex-shrink-0">
-                  <img src="person1.png" alt="" />
-                </div>
-                <div class="d-flex gap-1 align-items-baseline siz-11">
-                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
-                    yellowStone
-                  </div>
-                  <div class="chat-msg">
-                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
-                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
-                    adipisicing elit. , quae. Lorem
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- call -->
-            <div class="chat-bottom">
-              <div class="call dark-bg-1 p-2 rounded-1">
-                <div
-                  class="d-flex align-items-center justify-content-between w-100"
-                >
-                  <div class="call-info d-flex gap-2 align-items-center">
-                    <div class="call-text-1 gold-tx-1">name in call</div>
-                    <div class="siz-11 mt-1">11:12</div>
-                  </div>
-                  <div class="call-action d-flex gap-3 align-items-center">
-                    <button class="call-btn">
-                      <i class="fas fa-check"></i>
-                    </button>
-                    <button class="call-btn">
-                      <i class="fas fa-times"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="type-msg mt-3 dark-bg-1 p-2 rounded-1">
-                <input
-                  type="text"
-                  placeholder="type message..."
-                  class="rounded-1 bg-dark-1"
-                />
-              </div>
-            </div>
+            <button>
+              <i class="fas fa-plus"></i>
+            </button>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-3 mb-3">
-          <div class="chart-controler container-fluid mt-2">
-            <div class="radio_container siz-14">
-              <input type="radio" name="1" id="auto" checked />
-              <label for="auto">auto</label>
-              <input type="radio" name="1" id="manual" />
-              <label for="manual">manual</label>
-            </div>
-            <div class="radio_container round mt-3 siz-14">
-              <input type="radio" name="2" id="controls" checked />
-              <label for="controls">controls</label>
-              <input type="radio" name="2" id="leaderboard" />
-              <label for="leaderboard">leaderboard</label>
-            </div>
-            <!-- bet mount -->
-            <div class="cs-box mt-4">
-              <div
-                class="d-flex justify-content-between align-items-center fw-bold siz-14"
-              >
-                <div class="siz-13">bet mount</div>
-                <div>0</div>
-              </div>
-              <div
-                class="control_box d-flex siz-14 mt-2 gap-3 justify-content-between"
-              >
-                <div
-                  class="d-flex align-items-center justify-content-between w-50"
-                >
-                  <div class="fw-bold">00.0</div>
-                  <img src="coin.png" class="btn-icone" alt="" />
-                </div>
-                <div class="row align-items-center w-50 middel-border">
-                  <div class="col-4 text-center">1/2</div>
-                  <div class="col-4 text-center middel-border">1/2</div>
-                  <div class="col-4 text-center">1/2</div>
-                </div>
-              </div>
-            </div>
-            <!-- chashout and number of bit -->
-            <div class="mt-3 d-flex gap-2">
-              <div class="cs-box w-50 fw-bold">
-                <div class="siz-13">chashout</div>
-                <div
-                  class="control_box d-flex siz-14 mt-2 gap-3 justify-content-between"
-                >
-                  <div
-                    class="d-flex align-items-center justify-content-between w-50"
-                  >
-                    <div class="fw-bold">20.0</div>
-                  </div>
-                </div>
-              </div>
-              <div class="cs-box w-50 fw-bold">
-                <div class="siz-13">Number Of Bets</div>
-                <div
-                  class="control_box d-flex siz-14 mt-2 gap-3 justify-content-between"
-                >
-                  <div
-                    class="d-flex align-items-center justify-content-between w-50"
-                  >
-                    <div class="fw-bold">20.0</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- on Win -->
-            <div class="cs-box mt-4">
-              <div
-                class="d-flex justify-content-between align-items-center fw-bold siz-14"
-              >
-                <div class="siz-13">on Win</div>
-              </div>
-              <div
-                class="control_box d-flex siz-14 mt-2 pt-0 pb-0 pe-2 ps-0 gap-2 justify-content-between align-items-center"
-              >
-                <button type="button" class="reset-btn flex-shrink-0">
-                  reset
-                </button>
-                <div class="p-">
-                  <div class="inscrese-by gap-3 d-flex align-items-center">
-                    <div class="inscrese ms-3 me-3 text-center flex-shrink-0">
-                      inscrese by
-                    </div>
-                    <div
-                      class="increase-input d-flex align-items-center justify-content-between rounded-12 max-w-100 ps-2 pe-2"
-                    >
-                      <input value="0" type="number" class="w-100" />
-                      %
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- on loss -->
-            <div class="cs-box mt-4">
-              <div
-                class="d-flex justify-content-between align-items-center fw-bold siz-14"
-              >
-                <div class="siz-13">on loss</div>
-              </div>
-              <div
-                class="control_box d-flex siz-14 mt-2 pt-0 pb-0 pe-2 ps-0 gap-2 justify-content-between align-items-center"
-              >
-                <button type="button" class="reset-btn flex-shrink-0">
-                  reset
-                </button>
-                <div class="p-">
-                  <div class="inscrese-by gap-3 d-flex align-items-center">
-                    <div class="inscrese ms-3 me-3 text-center flex-shrink-0">
-                      inscrese by
-                    </div>
-                    <div
-                      class="increase-input d-flex align-items-center justify-content-between rounded-12 max-w-100 ps-2 pe-2"
-                    >
-                      <input value="0" type="number" class="w-100" />
-                      %
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- profit on Win -->
-            <div class="cs-box mt-4">
-              <div
-                class="d-flex justify-content-between align-items-center fw-bold siz-14"
-              >
-                <div class="siz-13">profit on Win</div>
-                <div>0</div>
-              </div>
-              <div
-                class="control_box d-flex siz-14 mt-2 gap-3 justify-content-between align-items-center"
-              >
-                <div class="fw-bold">00.0</div>
-                <img src="coin.png" class="btn-icone" alt="" />
-              </div>
-            </div>
-            <!-- end button -->
-            <a href="#" class="gold-btn cu-btn fw-bold uppercase mt-3">
-              start autoBet
-            </a>
-            <a href="#" class="red-btn cu-btn fw-bold uppercase mt-3">
-              start autoBet
-            </a>
-          </div>
-        </div>
-        <div class="col-md-12 col-lg-6">
-          <div class="chart container-fluid">
-            <div class="container-fluid mt-2">
-              <div class="d-flex justify-content-end gap-3">
-                <button class="rounded-btn bg-gold">324.5 x</button>
-                <button class="rounded-btn bg-dark-1 light-tx-1">
-                  324.5 x
-                </button>
-                <button class="rounded-btn bg-gold">324.5 x</button>
-                <button class="rounded-btn bg-dark-1 light-tx-1">
-                  324.5 x
-                </button>
-                <button class="rounded-btn bg-dark-1 light-tx-1">
-                  <img src="groo.png" alt="" />
-                </button>
-              </div>
-            </div>
-            <div class="chartCard position-relative pe-4">
-              <div id="chartContainer" style="height: 460px; width: 100%"></div>
-              <div class="chart-name">BankrollFresh</div>
-
-              <div class="over-layx">
-                <div class="text-white">1.98x</div>
+          <!-- end buttons -->
+          <div class="sec-part position-relative">
+            <button class="show-login-buttons cu-btn dark-bg-1 light-tx-1 d-none">
+              <i class="fas fa-bars light-tx-1 siz-18 fw-bolder"></i>
+            </button>
+            <div class="menu-list d-flex gap-3 align-items-center">
+              <a href="#" class="light-tx-1">Redeem</a>
+              <a href="#" class="light-tx-1">Redeem</a>
+              <div class="lgoin-btns d-flex gap-2">
+                <a href="#" class="purble-btn cu-btn fw-bold uppercase">
+                  <img src="discord.png" class="btn-icone" alt="" />
+                </a>
+                <a href="#" class="gold-btn cu-btn fw-bold uppercase">
+                  Deposit
+                </a>
+                <a href="#" class="green-btn cu-btn fw-bold uppercase">
+                  login
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </nav>
 
-    <!-- footer -->
-    <footer class="mt-5">
-      <div class="container-fluid light-tx-1">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="footer-logo mb-3">
-              <img src="logo.png" alt="" />
-            </div>
-            <div class="footer-text">
-              <p>
-                Lorem ipsum dolor sit amet co sicing elit. Voluptates, quae.
-                Lorem ipsum dolor sit amet kh idcebiw adipisicing elit.
-                Voluptates, quae. Lorem ipsum dolor sdolor sit amet kh idcebiw
-                adipisicing elit. Voluptates, quae. Lorem ipsum dolor s dolor
-                sit amet kh idcebiw adipisicing elit. Voluptates, quae. Lorem
-                ipsum dolor sit amet kh idcebiw adipisicing elit. Voluptates,
-                quae. Lorem ipsum dolor sit amet kh idcebiw adipisicing elit.
-                Voluptates, quae.
-              </p>
+  <!-- Start Content -->
+  <div class="page-conent light-tx-1">
+    <div class="row">
+      <button class="open-chat-bar d-none green-btn fw-bold uppercase">
+        <i class="far fa-comment-dots"></i>
+      </button>
+
+      <div class="col-md-6 col-lg-2 chat-bar mb-3 chat-wrapper">
+        <button class="close-chat-bar d-none">
+          <i class="fas fa-times-circle"></i>
+        </button>
+
+        <div class="chat-header-container shadow-sm ">
+          <!-- chat room -->
+          <div class="chat-header d-flex align-items-center mt-2 justify-content-between dark-bg-1 p-2 rounded-1">
+            <div class="fw-bold ">chat room</div>
+
+            <div class="d-flex align-items-center siz-10 gap-2">
+              <div class="online-dot"></div>
+              <span class="count-number">4234</span>
             </div>
           </div>
-          <div class="col-md-1"></div>
+          <!-- total rain -->
+          <div class="mt-2 chat-header d-flex align-items-center justify-content-between dark-bg-1 p-2 rounded-1">
+            <div class="fw-bold">total rain</div>
 
-          <div class="col-md-3 col-6">
-            <h4 class="text-white mb-3">About</h4>
-            <ul class="footer-a list-unstyled">
-              <li class="mt-4">
-                <a href="#">About</a>
-              </li>
-              <li class="mt-4">
-                <a href="#">About</a>
-              </li>
-              <li class="mt-4">
-                <a href="#">About</a>
-              </li>
-              <li class="mt-4">
-                <a href="#">About</a>
-              </li>
-            </ul>
+            <div class="d-flex align-items-center justify-content-start gap-1">
+              <img src="coin.png" class="btn-icone" alt="" />
+              <div class="light-tx-1 DIN-Medium">2323</div>
+            </div>
           </div>
-          <div class="col-md-3 col-6">
-            <h4 class="text-white mb-3">Community</h4>
-            <ul class="footer-a-sq list-unstyled d-flex gap-3">
-              <li class="mt-4">
-                <a href="#" class="rounded-1"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li class="mt-4">
-                <a href="#" class="rounded-1"><i class="fab fa-discord"></i></a>
-              </li>
-            </ul>
+        </div>
+
+        <!-- chat -->
+        <div class="chat-container ps-2 pe-2 pb-2 pt-0 siz-14 w-100  ">
+          <div class="chat-list-container ">
+            <div class="chat-list ">
+              <div class="chat-item d-flex gap-2 mt-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person2.png" alt="" />
+                </div>
+                <div class="">
+                  <span class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </span>
+                  <span class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum
+                  </span>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person2.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor
+                  </div>
+                </div>
+              </div>
+
+              <div class="chat-item d-flex gap-2 mt-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 ">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div class="msg-container">
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae.
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+              <div class="chat-item d-flex gap-2 mt-2 mr-2">
+                <div class="caht-avater flex-shrink-0">
+                  <img src="person1.png" alt="" />
+                </div>
+                <div>
+                  <div class="chat-name fw-bolder mt-1 flex-shrink-0">
+                    yellowStone
+                  </div>
+                  <div class="chat-msg">
+                    sdolor sit amet kh idcebiw adipisicing elit. Voluptates,
+                    quae. Lorem ipsum dolor s dolor sit amet kh idcebiw
+                    adipisicing elit. , quae. Lorem
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- call -->
+        <div class="chat-bottom ps-2 pe-2 m-2 ">
+          <div class="call dark-bg-1 p-2 rounded-1">
+            <div class="d-flex align-items-center justify-content-between w-100">
+              <div class="call-info d-flex gap-2 align-items-center">
+                <div class="call-text-1 gold-tx-1">name in call</div>
+                <div class="siz-11 mt-1">11:12</div>
+              </div>
+              <div class="call-action d-flex gap-3 align-items-center">
+                <button class="call-btn">
+                  <i class="fas fa-check"></i>
+                </button>
+                <button class="call-btn">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="type-msg mt-3 dark-bg-1 p-2 rounded-1 d-flex ">
+            <input type="text" placeholder="Type message..." class="rounded-1 bg-dark-1" />
+            <div class="options p-2 bg-dark-1 ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M8.00033 2.66667C8.73671 2.66667 9.33366 2.06971 9.33366 1.33333C9.33366 0.596954 8.73671 0 8.00033 0C7.26395 0 6.66699 0.596954 6.66699 1.33333C6.66699 2.06971 7.26395 2.66667 8.00033 2.66667Z"
+                  fill="#9293A6" />
+                <path
+                  d="M8.00033 9.33335C8.73671 9.33335 9.33366 8.7364 9.33366 8.00002C9.33366 7.26364 8.73671 6.66669 8.00033 6.66669C7.26395 6.66669 6.66699 7.26364 6.66699 8.00002C6.66699 8.7364 7.26395 9.33335 8.00033 9.33335Z"
+                  fill="#9293A6" />
+                <path
+                  d="M8.00033 16C8.73671 16 9.33366 15.403 9.33366 14.6666C9.33366 13.9303 8.73671 13.3333 8.00033 13.3333C7.26395 13.3333 6.66699 13.9303 6.66699 14.6666C6.66699 15.403 7.26395 16 8.00033 16Z"
+                  fill="#9293A6" />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
 
-    <script src="jquery-3.5.1.min.js"></script>
-    <script src="popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/chart.js"
-    ></script>
-    <script src="chart-plugin.js"></script>
-    <script src="chart.js"></script>
+      <div class="col-md-6 col-lg-2 mb-3 controler-container">
+        <div class="chart-controler container mt-2">
+          <div class="radio_container siz-14">
+            <input type="radio" name="1" id="auto" checked />
+            <label for="auto">auto</label>
+            <input type="radio" name="1" id="manual" />
+            <label for="manual">manual</label>
+          </div>
+          <div class="radio_container round mt-3 siz-14">
+            <input type="radio" name="2" id="controls" checked />
+            <label for="controls">controls</label>
+            <input type="radio" name="2" id="leaderboard" />
+            <label for="leaderboard">leaderboard</label>
+          </div>
+          <!-- bet mount -->
+          <div class="cs-box mt-4">
+            <div class="d-flex justify-content-between align-items-center fw-bold siz-14">
+              <div class="siz-13">bet mount</div>
+              <div>0</div>
+            </div>
+            <div class="control_box d-flex siz-14 mt-2 gap-3 justify-content-between">
+              <div class="d-flex align-items-center justify-content-between w-50">
+                <div class="fw-bold">00.0</div>
+                <img src="coin.png" class="btn-icone" alt="" />
+              </div>
+              <div class="row align-items-center w-50 middel-border">
+                <div class="col-4 text-center">1/2</div>
+                <div class="col-4 text-center middel-border">1/2</div>
+                <div class="col-4 text-center">1/2</div>
+              </div>
+            </div>
+          </div>
+          <!-- chashout and number of bit -->
+          <div class="mt-3 d-flex gap-2">
+            <div class="cs-box w-50 fw-bold">
+              <div class="siz-13">chashout</div>
+              <div class="control_box d-flex siz-14 mt-2 gap-3 justify-content-between">
+                <div class="d-flex align-items-center justify-content-between w-50">
+                  <div class="fw-bold">20.0</div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-box w-50 fw-bold">
+              <div class="siz-13">Number Of Bets</div>
+              <div class="control_box d-flex siz-14 mt-2 gap-3 justify-content-between">
+                <div class="d-flex align-items-center justify-content-between w-50">
+                  <div class="fw-bold">20.0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- on Win -->
+          <div class="cs-box mt-4">
+            <div class="d-flex justify-content-between align-items-center fw-bold siz-14">
+              <div class="siz-13">on Win</div>
+            </div>
+            <div
+              class="control_box d-flex siz-14 mt-2 pt-0 pb-0 pe-2 ps-0 gap-2 justify-content-between align-items-center">
+              <button type="button" class="reset-btn flex-shrink-0">
+                reset
+              </button>
+              <div class="p-">
+                <div class="inscrese-by gap-3 d-flex align-items-center">
+                  <div class="inscrese ms-3 me-3 text-center flex-shrink-0">
+                    inscrese by
+                  </div>
+                  <div
+                    class="increase-input d-flex align-items-center justify-content-between rounded-12 max-w-100 ps-2 pe-2">
+                    <input value="0" type="number" class="w-100" />
+                    %
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- on loss -->
+          <div class="cs-box mt-4">
+            <div class="d-flex justify-content-between align-items-center fw-bold siz-14">
+              <div class="siz-13">on loss</div>
+            </div>
+            <div
+              class="control_box d-flex siz-14 mt-2 pt-0 pb-0 pe-2 ps-0 gap-2 justify-content-between align-items-center">
+              <button type="button" class="reset-btn flex-shrink-0">
+                reset
+              </button>
+              <div class="p-">
+                <div class="inscrese-by gap-3 d-flex align-items-center">
+                  <div class="inscrese ms-3 me-3 text-center flex-shrink-0">
+                    inscrese by
+                  </div>
+                  <div
+                    class="increase-input d-flex align-items-center justify-content-between rounded-12 max-w-100 ps-2 pe-2">
+                    <input value="0" type="number" class="w-100" />
+                    %
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- profit on Win -->
+          <div class="cs-box mt-4">
+            <div class="d-flex justify-content-between align-items-center fw-bold siz-14">
+              <div class="siz-13">profit on Win</div>
+              <div>0</div>
+            </div>
+            <div class="control_box d-flex siz-14 mt-2 gap-3 justify-content-between align-items-center">
+              <div class="fw-bold">00.0</div>
+              <img src="coin.png" class="btn-icone" alt="" />
+            </div>
+          </div>
+          <!-- end button -->
+          <a href="#" class="gold-btn cu-btn fw-bold uppercase mt-3">
+            start autoBet
+          </a>
+          <a href="#" class="red-btn cu-btn fw-bold uppercase mt-3">
+            start autoBet
+          </a>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-7">
+        <div class="chart container-fluid">
+          <div class="container-fluid mt-2">
+            <div class="d-flex justify-content-end gap-3">
+              <button class="rounded-btn bg-gold outcomes">324.5 x</button>
+              <button class="rounded-btn bg-dark-1 light-tx-1 outcomes">
+                324.5 x
+              </button>
+              <button class="rounded-btn bg-gold outcomes">324.5 x</button>
+              <button class="rounded-btn bg-dark-1 light-tx-1 outcomes">
+                324.5 x
+              </button>
+              <button class="rounded-btn bg-dark-1 light-tx-1 outcomes">
+                <img src="groo.png" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="chartCard position-relative ">
+            <div id="chartContainer" style="position:absolute;top:0;height: 70%; width: 100%;padding-top:2rem">
+              <!-- <div style="width:100%;height:100%; background-color: black;"></div> -->
+              <div style="display: flex; background-color: #1a1c24;">
+                <div id="y-axis"
+                  style="display: flex; flex-direction: column-reverse; justify-content: space-between; font-size: larger; padding: 1rem; height: 800px;">
+                  <div>1.0x</div>
+                  <div>0.8x</div>
+                  <div>0.6x</div>
+                  <div>0.4x</div>
+                  <div>0.2x</div>
+                </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
+                <!-- <canvas id="canvas" width="500" height="500"></canvas> -->
+                <div style="position: relative;">
+                  <canvas id="canvas" width="1000" height="800" style=" position: absolute;
+                        left: 0; top: 0; z-index: 0;"></canvas>
+                  <canvas id="canvas2" width="1000" height="800"
+                    style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+                </div>
+              </div>
 
-    <script>
-      var chart = new CanvasJS.Chart("chartContainer", {
-        animationEnabled: true,
-        backgroundColor: "#1a1c24",
+              <div id='x-axis'
+                style="display: flex;width: 70rem;justify-content: space-between; font-size: larger;padding:1rem 4rem;color:#9293A6">
+                <div>1s</div>
+                <div>2s</div>
+                <div>3s</div>
+                <div>4s</div>
+                <div>5s</div>
+              </div>
+            </div>
 
-        axisX: {
-          interval: 3,
-          labelFontColor: "#9293a6",
-        },
-        axisY: {
-          // includeZero: true,
-          gridThickness: 0,
-          labelFontColor: "#9293a6",
-          interval: 0.4,
 
-          scaleBreaks: {
-            customBreaks: [
-              {
-                spacing: "100%",
-              },
-            ],
-          },
-        },
+            <!-- #7  -->
+            <!-- <div class="chart-name">BankrollFresh</div> -->
 
-        // animationDuration: 50000,
-        data: [
-          {
-            type: "line",
-            lineThickness: 5,
-            markerSize: 0,
-            markerImageUrl: "rocket.png",
-            color: "#e9b10e",
+            <div class="over-layx">
+              <div id="overlay" class=""></div>
+            </div>
+          </div>
+        </div>
 
-            dataPoints: [
-              { x: 0, y: 1.0 },
-              { x: 10, y: 1.3 },
-              { x: 20, y: 1.5 },
-              { x: 30, y: 1.8 },
-              { x: 40, y: 2.0 },
-              { x: 50, y: 2.3 },
-            ],
-          },
-        ],
-      });
+      </div>
+    </div>
+  </div>
 
-      imageMarker = $("<img>")
-        .attr("src", chart.options.data[0].markerImageUrl)
-        .css("display", "none")
-        .css("height", 150)
-        .css("width", 150)
-        .appendTo($("#chartContainer>.canvasjs-chart-container"));
-      chart.render();
-    </script>
-    <script src="main.js"></script>
-  </body>
+  <!-- footer -->
+  <footer class="mt-5">
+    <div class="container-fluid light-tx-1">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="footer-logo mb-3">
+            <img src="logo.png" alt="" />
+          </div>
+          <div class="footer-text">
+            <p>
+              Lorem ipsum dolor sit amet co sicing elit. Voluptates, quae.
+              Lorem ipsum dolor sit amet kh idcebiw adipisicing elit.
+              Voluptates, quae. Lorem ipsum dolor sdolor sit amet kh idcebiw
+              adipisicing elit. Voluptates, quae. Lorem ipsum dolor s dolor
+              sit amet kh idcebiw adipisicing elit. Voluptates, quae. Lorem
+              ipsum dolor sit amet kh idcebiw adipisicing elit. Voluptates,
+              quae. Lorem ipsum dolor sit amet kh idcebiw adipisicing elit.
+              Voluptates, quae.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3 col-6">
+          <h4 class="text-white mb-3">About</h4>
+          <ul class="footer-a list-unstyled">
+            <li class="mt-4">
+              <a href="#">About</a>
+            </li>
+            <li class="mt-4">
+              <a href="#">About</a>
+            </li>
+            <li class="mt-4">
+              <a href="#">About</a>
+            </li>
+            <li class="mt-4">
+              <a href="#">About</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-6">
+          <h4 class="text-white mb-3">Community</h4>
+          <ul class="footer-a-sq list-unstyled d-flex gap-3">
+            <li class="mt-4">
+              <a href="#" class="rounded-1"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="mt-4">
+              <a href="#" class="rounded-1"><i class="fab fa-discord"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="jquery-3.5.1.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <!-- #5 -->
+  <script src="canvas-chart.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
